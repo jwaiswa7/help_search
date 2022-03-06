@@ -1,11 +1,17 @@
+# frozen_string_literal: true
+
 class Article < ApplicationRecord
+  validates :title, :body, presence: true
 
-    validates :title, :body, presence: true 
+  COMMON_WORDS = %w[am and come here how how i is is of the this was when where who].freeze
 
-    after_commit :populate_tags
+  # private
 
-    private 
-
-    def populate_tags
+  def find_key_words
+    text = body.split(/\W+/)
+    Article::COMMON_WORDS.each do |w|
+      text.delete w
     end
+    update(key_words: text.join)
+  end
 end
