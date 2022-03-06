@@ -1,5 +1,4 @@
 class Article < ApplicationRecord
-    serialize :tags, Array
 
     validates :title, :body, presence: true 
 
@@ -8,7 +7,5 @@ class Article < ApplicationRecord
     private 
 
     def populate_tags
-      article_tags = []
-      titile.split("")
     end
 end
