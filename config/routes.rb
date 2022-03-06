@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   resources :sessions, only: :create
-  namespace :users do 
-    scope ":user_id" do
+  namespace :users do
+    resources :registrations, only: %i[new create]
+    scope ':user_id' do
       resources :searches, only: %i[new create]
     end
   end

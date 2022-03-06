@@ -1,0 +1,9 @@
+<%= form_with model: @user, url: users_registrations_path, class: "mt-6" do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, placeholder: "Your Name" %>
+    <%= f.label :email %>
+    <%= f.text_field :email, placeholder: "Your Email" %>
+    <div class="pt-5">
+      <%= f.submit "Register" %>
+    </div>
+  <% end %>
