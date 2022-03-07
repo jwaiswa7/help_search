@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-class Search < ApplicationRecord
-  belongs_to :user
+class Search < SearchBase
   validates :question, presence: true 
-  
 end

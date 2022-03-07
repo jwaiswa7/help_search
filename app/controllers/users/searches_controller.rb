@@ -4,7 +4,7 @@ module Users
   class SearchesController < ApplicationController
     before_action :set_user
     def new
-      @searches = @user.searches.group(:question).count
+      @searches = Search.where(user: @user.id).group(:question).count
     end
 
     def create

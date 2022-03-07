@@ -12,7 +12,7 @@ class SearchService
     key_words
     if key_words.count.positive?
       articles = search_articles_for_keywords(key_words)
-      Search.create(question: @question, articles:, user_id: @user_id)
+      Search.create(question: @question, articles:, user: @user_id)
       update_search_count(articles)
     end
   end
