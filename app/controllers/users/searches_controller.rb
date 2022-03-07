@@ -2,11 +2,19 @@
 
 module Users
   class SearchesController < ApplicationController
-    def new; end
+    before_action :set_user
+    def new
+      @searches = @user.searches.group(:question).count
+    end
 
     def create
-        SearchService.new(question: params[:question], user: params[:user_id]).call 
+        SearchService.new(question: params[:question], user_id: params[:user_id]).call 
         head :ok
+    end
+
+    private 
+    def set_user 
+        @user = User.find(params[:user_id])
     end
   end
 end

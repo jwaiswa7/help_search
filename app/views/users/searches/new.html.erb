@@ -1,1 +1,16 @@
-<h1>Serch here</h1>
+<%= form_tag users_searches_path(@user) do %>
+    <%= label_tag(:question, "Search for:") %>
+      <%= text_field_tag(:question) %>
+      <%= submit_tag("Search") %>
+<% end %>
+<br/>
+<table class="table-auto">
+    <tbody>
+        <% @searches.each do |question, count| %>
+          <tr>
+             <th><%= question %></th>
+             <td><%= count %></td>
+          </tr>
+        <% end %>
+    </tbody>
+</table>
