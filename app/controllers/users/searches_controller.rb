@@ -9,7 +9,7 @@ module Users
 
     def create
         SearchService.new(question: params[:question], user_id: params[:user_id]).call 
-        head :ok
+        redirect_to new_users_search_path(@user)
     end
 
     private 

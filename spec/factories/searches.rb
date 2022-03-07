@@ -2,7 +2,6 @@
 
 FactoryBot.define do
   factory :search do
-    question { 'MyString' }
-    articles { 'MyText' }
+    question { "How is the assignment" }
   end
 end
