@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :search do
-    question { "How is the assignment" }
+    question { "How is the assignment?" }
     association :user
   end
 end
