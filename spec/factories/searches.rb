@@ -3,6 +3,6 @@
 FactoryBot.define do
   factory :search do
     question { "How is the assignment?" }
-    association :user
+    user { rand(9) }
   end
 end
