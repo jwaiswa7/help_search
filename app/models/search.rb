@@ -2,5 +2,4 @@
 
 class Search < SearchBase
   validates :question, presence: true 
-
 end

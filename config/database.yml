@@ -4,28 +4,6 @@ default: &default
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
-# development:
-#   <<: *default
-#   database: help_search_development 
-#   seaches:
-#     <<: default
-#     database: h_s_search
-#   seaches_replica:
-#     <<: default
-#     database: h_s_search_replica
-#     replica: true
-
-# test:
-#   <<: *default
-#   database: help_search_test
-#   seaches:
-#     <<: default
-#     database: h_s_search_test
-#   seaches_replica:
-#     <<: default
-#     database: h_s_search_replica_test
-#     replica: true
-
 
 development:
   primary:
@@ -37,6 +15,19 @@ development:
     migrations_paths: db/searches_migrate
   searches_replica:
     database: h_s_search_replica
+    adapter: postgresql
+    replica: true
+
+test:
+  primary:
+    database: help_search_development_test
+    adapter: postgresql
+  searches:
+    database: h_s_search_test
+    adapter: postgresql
+    migrations_paths: db/searches_migrate
+  searches_replica:
+    database: h_s_search_replica_test
     adapter: postgresql
     replica: true
     
