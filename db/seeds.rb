@@ -13,4 +13,15 @@ def create_user
   User.create(name: 'New user', email: 'email@example.com')
 end
 
+def create_article
+  puts 'Creating article'
+  Article.create(title: 'cool', body: 'this is a cool article')
+end
+
+def create_search
+  puts 'creating search'
+end
+
 create_user
+create_article
+create_search

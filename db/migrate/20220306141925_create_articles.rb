@@ -5,7 +5,8 @@ class CreateArticles < ActiveRecord::Migration[7.0]
     create_table :articles do |t|
       t.string :title
       t.text :body
-      t.text :key_words
+      t.text :key_words, array: true, default: []
+      t.integer :search_count, default: 0
 
       t.timestamps
     end
