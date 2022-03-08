@@ -34,7 +34,10 @@ test:
 
 production:
   primary: 
-    adapter: postgresql
+    <<: *default
+    database: help_search_production
+    username: help_search
+    password: <%= ENV["HELP_SEARCH_DATABASE_PASSWORD"] %>
   searches:
     <<: *default
     migrations_paths: db/searches_migrate
