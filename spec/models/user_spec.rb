@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe User, type: :model do 
+RSpec.describe User, type: :model do
   let(:user) { FactoryBot.build :user }
 
   it 'Is a valid article' do
