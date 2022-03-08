@@ -36,7 +36,7 @@ production:
   primary: 
     <<: *default
     database: help_search_production
-    username: help_search
+    username: ibgvohtrkzcoxc
     password: <%= ENV["HELP_SEARCH_DATABASE_PASSWORD"] %>
   searches:
     <<: *default
@@ -46,3 +46,6 @@ production:
     <<: *default
     url: <%= ENV["HEROKU_POSTGRESQL_IVORY"] %>
     replica: true
+
+
+# postgres://ibgvohtrkzcoxc:e5aefe45e590facb52d6661c86c29d9d697d96c390de7889c837599f6eca0e4a@ec2-54-158-26-89.compute-1.amazonaws.com:5432/d67rgd9hiojubvd67rgd9hiojubv
