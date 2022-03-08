@@ -41,11 +41,8 @@ production:
   searches:
     <<: *default
     migrations_paths: db/searches_migrate
-    url: <%= ENV["HEROKU_POSTGRESQL_PUCE"] %>
+    url: <%= ENV["HEROKU_POSTGRESQL_SILVER"] %>
   searches_replica:
     <<: *default
-    url: <%= ENV["HEROKU_POSTGRESQL_IVORY"] %>
+    url: <%= ENV["HEROKU_POSTGRESQL_SILVER"] %>
     replica: true
-
-
-# postgres://ibgvohtrkzcoxc:e5aefe45e590facb52d6661c86c29d9d697d96c390de7889c837599f6eca0e4a@ec2-54-158-26-89.compute-1.amazonaws.com:5432/d67rgd9hiojubvd67rgd9hiojubv
