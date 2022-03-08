@@ -40,9 +40,8 @@ production:
     password: <%= ENV["HELP_SEARCH_DATABASE_PASSWORD"] %>
   searches:
     <<: *default
+    database: dm1ebcq9rlog3
+    username: zbhroeuevpkose
+    password: 0171b0ba103dc777597bb9ce5ffb0ea490d3793c2b088d92640d64916ba04cdc
     migrations_paths: db/searches_migrate
-    url: <%= ENV["HEROKU_POSTGRESQL_SILVER"] %>
-  searches_replica:
-    <<: *default
-    url: <%= ENV["HEROKU_POSTGRESQL_SILVER"] %>
-    replica: true
+    url: postgres://zbhroeuevpkose:0171b0ba103dc777597bb9ce5ffb0ea490d3793c2b088d92640d64916ba04cdc@ec2-18-210-191-5.compute-1.amazonaws.com:5432/dm1ebcq9rlog3
