@@ -40,7 +40,7 @@ production:
     <<: *default
     migrations_paths: db/searches_migrate
     url: <%= ENV['SEARCH_DATABASE_URL'] %>
-  searches:
+  searches_replica:
     <<: *default
     url: <%= ENV['SEARCH_REPLICA_DATABASE_URL'] %>
     replica: true
