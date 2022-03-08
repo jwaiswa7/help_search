@@ -35,9 +35,6 @@ test:
 production:
   primary: 
     <<: *default
-    database: help_search_production
-    username: ibgvohtrkzcoxc
-    password: <%= ENV["HELP_SEARCH_DATABASE_PASSWORD"] %>
   searches:
     <<: *default
     migrations_paths: db/searches_migrate
