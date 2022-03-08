@@ -35,13 +35,12 @@ test:
 production:
   primary: 
     <<: *default
-    database: help_search_production
-    username: help_search
-    password: <%= ENV["HELP_SEARCH_DATABASE_PASSWORD"] %>
+    url: <%= ENV['DATABASE_URL'] %>
   searches:
     <<: *default
-    database: dm1ebcq9rlog3
-    username: zbhroeuevpkose
-    password: 0171b0ba103dc777597bb9ce5ffb0ea490d3793c2b088d92640d64916ba04cdc
     migrations_paths: db/searches_migrate
-    url: postgres://zbhroeuevpkose:0171b0ba103dc777597bb9ce5ffb0ea490d3793c2b088d92640d64916ba04cdc@ec2-18-210-191-5.compute-1.amazonaws.com:5432/dm1ebcq9rlog3
+    url: <%= ENV['SEARCH_DATABASE_URL'] %>
+  searches:
+    <<: *default
+    url: <%= ENV['SEARCH_REPLICA_DATABASE_URL'] %>
+    replica: true
