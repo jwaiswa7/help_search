@@ -34,7 +34,7 @@ test:
 
 production:
   primary: 
-    <<: *default
+    adapter: postgresql
   searches:
     <<: *default
     migrations_paths: db/searches_migrate
