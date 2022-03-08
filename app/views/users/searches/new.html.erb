@@ -7,6 +7,7 @@
   <% end %>
   </div>
   <div>
+  <h1 class="font-bold text-4xl text-blue-500">Searched Questions for user</h1>
   <table class="table-auto">
     <thead>
       <tr>
@@ -25,4 +26,22 @@
       <% end %>
   </tbody>
 </table>
+</div>
+<div>
+<h1 class="font-bold text-4xl text-blue-500">Articles title and search count</h1>
+<table class="table-auto">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Number of searches</th>
+    </tr>
+  </thead>
+  <% @articles.each do | article| %>
+    <tr>
+      <td><%= article[1] %></td>
+      <td><%= article[0] %></td>
+    </tr>
+    <% end %>
+</table>
+</div>
 </div>

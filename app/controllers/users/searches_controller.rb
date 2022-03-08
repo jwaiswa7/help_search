@@ -5,6 +5,7 @@ module Users
     before_action :set_user
     def new
       @searches = Search.where(user: @user.id).group(:question, :articles).count
+      @articles = Article.all.pluck(:search_count, :title)
     end
 
     def create
