@@ -1,0 +1,21 @@
+<div class="row">
+  <h1 class="font-bold text-4xl text-blue-500">Articles</h1>
+<table class="table-fixed">
+   <thead>
+     <tr>
+       <th>Title</th>
+       <th>Body</th>
+       <th>Number of searches</th>
+     </tr>
+   </thead>
+    <tbody>
+      <% @articles.each do |article| %>
+          <tr>
+            <td><%= article.title %></td>
+            <td><%= article.body %></td>
+            <td><%= article.search_count %></td>
+          </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
