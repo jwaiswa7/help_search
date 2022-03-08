@@ -1,9 +1,45 @@
 # README
 
+## Starting the app
+development: 
+Run the command ./bin/dev 
+
+Run the command rspec for tests
+
 ## Models
 - User
 - Article
 - Search 
+
+### User model 
+Users will be created and registered in a user's model. Attributes of the user's model include: 
+- Full name 
+- Email
+Once a user is registered, then they can access their search page. 
+This will be a simple page with access by entering the user's email, not authentication required, as long as we have a registered user with that email, then the user is redirected to their search page. 
+
+### Article model
+
+Articles will have information about an article. 
+Attributes for the articles include: 
+- Title
+- Body
+- Key words. 
+Users will search for articles based, once an article is create, then it's searched for key words ad they are kept as an array in the keywords column
+
+### Searches model 
+
+The search model will contain records of searched information
+
+Because of the frequency of the searches being read and written from the database, there's is a need for the search model to have a searches and searches_replica database. 
+
+The primary search database will be used to write the search data while the replica database will be used for reading search analytics and presenting real-time information to the user. 
+
+Attributes for the search model include: 
+- Question 
+- Articles found, array containing the articles id
+
+
 
 ## Create a user
 - Create a new user from the new user link
