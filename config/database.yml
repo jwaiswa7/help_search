@@ -40,11 +40,9 @@ production:
     password: <%= ENV["HELP_SEARCH_DATABASE_PASSWORD"] %>
   searches:
     <<: *default
-    database: hs_search_production
     migrations_paths: db/searches_migrate
     url: <%= ENV["HEROKU_POSTGRESQL_PUCE"] %>
   searches_replica:
     <<: *default
-    database: hs_search_replica_production
     url: <%= ENV["HEROKU_POSTGRESQL_IVORY"] %>
     replica: true
