@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+.blue {
+    color: blue !important;
+}
+
+.row {
+    width: 100%;
+}

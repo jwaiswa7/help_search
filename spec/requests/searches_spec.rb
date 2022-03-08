@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'Searches', type: :request do
   let(:user) { FactoryBot.create :user }
-  before(:all) do 
+  before(:all) do
     FactoryBot.create :article
   end
   describe 'GET /new' do
@@ -14,10 +14,10 @@ RSpec.describe 'Searches', type: :request do
     end
   end
 
-  describe "POST /create" do 
-    it "creates a new search record" do 
+  describe 'POST /create' do
+    it 'creates a new search record' do
       post users_searches_path(user), params: {
-        question: "How is the assignment?", 
+        question: 'How is the assignment?',
         user_id: user.id
       }
 

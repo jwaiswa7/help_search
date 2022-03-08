@@ -1,16 +1,28 @@
-<%= form_tag users_searches_path(@user) do %>
+<div class="grid grid-flow-row auto-rows-max">
+  <div>
+  <%= form_tag users_searches_path(@user) do %>
     <%= label_tag(:question, "Search for:") %>
       <%= text_field_tag(:question) %>
       <%= submit_tag("Search") %>
-<% end %>
-<br/>
-<table class="table-auto">
-    <tbody>
-        <% @searches.each do |question, count| %>
-          <tr>
-             <th><%= question %></th>
-             <td><%= count %></td>
-          </tr>
-        <% end %>
-    </tbody>
+  <% end %>
+  </div>
+  <div>
+  <table class="table-auto">
+    <thead>
+      <tr>
+        <th>Question</th>
+        <th>Search count</th>
+        <th>Results</th>
+      </tr>
+    </thead>
+  <tbody>
+      <% @searches.each do |question, count| %>
+        <tr>
+           <td><%= question[0] %></th>
+           <td><%= count %></td>
+           <td><%= question[1].count %></td>
+        </tr>
+      <% end %>
+  </tbody>
 </table>
+</div>

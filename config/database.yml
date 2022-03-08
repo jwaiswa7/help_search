@@ -35,16 +35,12 @@ test:
 production:
   primary: 
     <<: *default
-    database: help_search_production
-    username: help_search
-    password: <%= ENV["HELP_SEARCH_DATABASE_PASSWORD"] %>
+    url: <%= ENV['DATABASE_URL'] %>
   searches:
     <<: *default
-    database: hs_search_production
     migrations_paths: db/searches_migrate
-    url: <%= ENV["HEROKU_POSTGRESQL_PUCE"] %>
+    url: <%= ENV['SEARCH_DATABASE_URL'] %>
   searches_replica:
     <<: *default
-    database: hs_search_replica_production
-    url: <%= ENV["HEROKU_POSTGRESQL_IVORY"] %>
+    url: <%= ENV['SEARCH_REPLICA_DATABASE_URL'] %>
     replica: true
